@@ -1,0 +1,10 @@
+version: 2.1
+orbs:
+  conftest: kenfdev/conftest-orb@0.0.7
+workflows:
+  build:
+    jobs:
+      - conftest/test:
+          pre-steps:
+            - checkout
+          file: serverless.yaml
